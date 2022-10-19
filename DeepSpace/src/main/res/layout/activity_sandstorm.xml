@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    tools:context="org.biohazard4050.deepspace.Sandstorm">
+
+    <!-- Field elements image -->
+    <ImageView
+        android:id="@+id/fieldElementsImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/field_elements_1280x640"
+        android:contentDescription="fieldElementsImageView"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"/>
+
+    <!-- "Crossed Baseline" checkbox -->
+    <CheckBox
+        android:id="@+id/baselineInd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/fieldElementsImageView"
+        android:layout_marginTop="@dimen/item_vertical_margin_small"
+        android:layout_marginStart="48dp"
+        android:layout_alignParentStart="true"
+        android:onClick="onCheckboxClicked"
+        android:text="Crossed Baseline"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- "TeleOp Period" button -->
+    <Button
+        android:id="@+id/teleopPeriodButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="onButtonClicked"
+        android:padding="8dp"
+        android:text="@string/period_teleop"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Rocket top cargo image -->
+    <ImageView
+        android:id="@+id/rocketTopCargoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/cargo_64x64"
+        android:onClick="onElementClicked"
+        android:contentDescription="rocketTopCargoImageView" />
+
+    <!-- Rocket middle cargo image -->
+    <ImageView
+        android:id="@+id/rocketMidCargoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rocketTopCargoImageView"
+        android:layout_alignStart="@id/rocketTopCargoImageView"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/cargo_64x64"
+        android:onClick="onElementClicked"
+        android:contentDescription="rocketMidCargoImageView" />
+
+    <!-- Rocket bottom cargo image -->
+    <ImageView
+        android:id="@+id/rocketBotCargoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rocketMidCargoImageView"
+        android:layout_alignStart="@id/rocketMidCargoImageView"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/cargo_64x64"
+        android:onClick="onElementClicked"
+        android:contentDescription="rocketBotCargoImageView" />
+
+    <!-- Rocket top hatch image -->
+    <ImageView
+        android:id="@+id/rocketTopHatchImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="125dp"
+        android:src="@drawable/hatch_64x64"
+        android:onClick="onElementClicked"
+        android:contentDescription="rocketTopHatchImageView" />
+
+    <!-- Rocket middle hatch image -->
+    <ImageView
+        android:id="@+id/rocketMidHatchImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rocketTopHatchImageView"
+        android:layout_alignStart="@id/rocketTopHatchImageView"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/hatch_64x64"
+        android:onClick="onElementClicked"
+        android:contentDescription="rocketMidHatchImageView" />
+
+    <!-- Rocket bottom cargo image -->
+    <ImageView
+        android:id="@+id/rocketBotHatchImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rocketMidHatchImageView"
+        android:layout_alignStart="@id/rocketMidHatchImageView"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/hatch_64x64"
+        android:onClick="onElementClicked"
+        android:contentDescription="rocketBotHatchImageView" />
+
+    <!-- Cargo ship cargo image -->
+    <ImageView
+        android:id="@+id/cargoShipCargoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="130dp"
+        android:src="@drawable/cargo_64x64"
+        android:onClick="onElementClicked"
+        android:contentDescription="cargoShipCargoImageView" />
+
+    <!-- Cargo ship hatch image -->
+    <ImageView
+        android:id="@+id/cargoShipHatchImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="125dp"
+        android:src="@drawable/hatch_64x64"
+        android:onClick="onElementClicked"
+        android:contentDescription="cargoShipHatchImageView" />
+
+    <!-- Rocket top cargo count label -->
+    <TextView
+        android:id="@+id/rocketTopCargoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/rocketTopCargoImageView"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:ems="1"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textStyle="bold" />
+
+    <!-- Rocket middle cargo count label -->
+    <TextView
+        android:id="@+id/rocketMiddleCargoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/rocketMidCargoImageView"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:ems="1"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textStyle="bold" />
+
+    <!-- Rocket bottom cargo count label -->
+    <TextView
+        android:id="@+id/rocketBottomCargoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/rocketBotCargoImageView"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:ems="1"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textStyle="bold" />
+
+    <!-- Rocket top hatch count label -->
+    <TextView
+        android:id="@+id/rocketTopHatchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/rocketTopHatchImageView"
+        android:layout_toRightOf="@id/rocketTopHatchImageView"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:ems="1"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textStyle="bold" />
+
+    <!-- Rocket middle hatch count label -->
+    <TextView
+        android:id="@+id/rocketMiddleHatchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/rocketMidHatchImageView"
+        android:layout_toRightOf="@id/rocketMidHatchImageView"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:ems="1"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textStyle="bold" />
+
+    <!-- Rocket bottom hatch count label -->
+    <TextView
+        android:id="@+id/rocketBottomHatchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/rocketBotHatchImageView"
+        android:layout_toRightOf="@id/rocketBotHatchImageView"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:ems="1"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textStyle="bold" />
+
+    <!-- Cargo ship cargo count label -->
+    <TextView
+        android:id="@+id/cargoShipCargoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/cargoShipCargoImageView"
+        android:layout_toLeftOf="@id/cargoShipCargoImageView"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:ems="1"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textStyle="bold" />
+
+    <!-- Cargo ship hatch count label -->
+    <TextView
+        android:id="@+id/cargoShipHatchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/cargoShipHatchImageView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="90dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:ems="1"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/backWhite"
+        android:textStyle="bold" />
+
+</RelativeLayout>

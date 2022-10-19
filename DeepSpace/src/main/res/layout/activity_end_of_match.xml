@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    tools:context="org.biohazard4050.deepspace.EndOfMatch">
+
+    <!-- Page header -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/end_of_match"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <!-- Container for EndOfMatch form controls -->
+    <RelativeLayout
+        android:id="@+id/matchInfoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/item_vertical_margin_small">
+
+        <!-- Container for EndOfMatch form controls -->
+        <RelativeLayout
+            android:id="@+id/endStateLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true">
+            <!-- "End State" header -->
+            <TextView
+                android:id="@+id/endPositionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eom_end_state"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <!-- End position radio buttons -->
+            <RadioGroup
+                android:id="@+id/endStateRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/endPositionTextView"
+                android:layout_marginLeft="@dimen/item_horizontal_margin_big">
+
+                <!-- "Did Nothing" radio button -->
+                <RadioButton
+                    android:id="@+id/nothingRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/eom_state_nothing"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- "Level 1" radio button -->
+                <RadioButton
+                    android:id="@+id/habitat1RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/habitat1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- "Level 2" radio button -->
+                <RadioButton
+                    android:id="@+id/habitat2RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/habitat2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- "Level 3" radio button -->
+                <RadioButton
+                    android:id="@+id/habitat3RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/habitat3"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <!-- Container for HabAssist form controls -->
+        <RelativeLayout
+            android:id="@+id/habAssistLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/endStateLayout"
+            android:layout_marginStart="45dp">
+
+            <!-- "Hab Assist" header -->
+            <TextView
+                android:id="@+id/habAssistTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hab Assist"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <!-- Hab assist radio buttons -->
+            <RadioGroup
+                android:id="@+id/habAssistRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/habAssistTextView"
+                android:layout_marginLeft="@dimen/item_horizontal_margin_big">
+
+                <!-- "Did Nothing" radio button -->
+                <RadioButton
+                    android:id="@+id/habAssistNothingRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/eom_state_nothing"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- "Level 2" radio button -->
+                <RadioButton
+                    android:id="@+id/habAssistLevel2RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/habitat2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- "Level 3" radio button -->
+                <RadioButton
+                    android:id="@+id/habAssistLevel3RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/habitat3"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <CheckBox
+            android:id="@+id/wasAssistedCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/endStateLayout"
+            android:layout_alignEnd="@id/habAssistLayout"
+            android:onClick="onCheckboxClicked"
+            android:text="Was Assisted"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <!-- "Penalties" header -->
+        <TextView
+            android:id="@+id/penaltiesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/endStateLayout"
+            android:layout_marginTop="@dimen/item_vertical_margin_big"
+            android:text="@string/eom_penalties"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/penaltiesLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/penaltiesTextView"
+            android:layout_marginLeft="@dimen/item_horizontal_margin_big"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/penaltiesCardsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/penaltyYellowCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="@string/penalty_card_yellow"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/penaltyRedCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="@string/penalty_card_red"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/penaltiesOtherLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/item_horizontal_margin_big"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/penaltyFoulCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="@string/penalty_foul"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/penaltyDisabledCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="@string/penalty_disabled"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- "Match Notes" button -->
+    <Button
+        android:id="@+id/matchNotesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/item_vertical_margin_big"
+        android:onClick="onButtonClicked"
+        android:padding="@dimen/item_horizontal_margin_small"
+        android:text="@string/match_notes"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>
+
