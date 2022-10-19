@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.biohazard4050.infiniterecharge.TeleRed">
+
+    <!-- Background image -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="960dp"
+        android:layout_height="463dp"
+        android:src="@drawable/background_tele_1200x578"
+        android:contentDescription="backgroundImageView"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <!-- "End of Match" button -->
+    <Button
+        android:id="@+id/endOfMatchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"
+        android:onClick="onButtonClicked"
+        android:padding="8dp"
+        android:text="@string/end_of_match"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Power Port image -->
+    <ImageView
+        android:id="@+id/powerPortImageView"
+        android:layout_width="565dp"
+        android:layout_height="377dp"
+        android:layout_marginStart="-84dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="powerPortImageView"
+        android:onClick="onElementClicked"
+        android:src="@drawable/power_port_red" />
+
+    <!-- Top Minus image -->
+    <ImageView
+        android:id="@+id/powerPortTopMinusImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="78dp"
+        android:contentDescription="powerPortTopMinusImageView"
+        android:onClick="onElementClicked"
+        android:src="@drawable/power_cell_minus" />
+
+    <!-- Top Counter label -->
+    <TextView
+        android:id="@+id/powerPortCountTopTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/powerPortTopMinusImageView"
+        android:layout_toRightOf="@id/powerPortTopMinusImageView"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:background="#00000000"
+        android:ems="1"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/backWhite"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <!-- Top Plus image -->
+    <ImageView
+        android:id="@+id/powerPortTopPlusImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/powerPortCountTopTextView"
+        android:layout_marginStart="8dp"
+        android:layout_alignTop="@id/powerPortTopMinusImageView"
+        android:contentDescription="powerPortTopPlusImageView"
+        android:onClick="onElementClicked"
+        android:src="@drawable/power_cell_plus" />
+
+    <!-- Bot Minus image -->
+    <ImageView
+        android:id="@+id/powerPortBotMinusImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@id/powerPortTopMinusImageView"
+        android:layout_marginTop="289dp"
+        android:contentDescription="powerPortBotMinusImageView"
+        android:onClick="onElementClicked"
+        android:src="@drawable/power_cell_minus" />
+
+    <!-- Bot Counter label -->
+    <TextView
+        android:id="@+id/powerPortCountBotTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/powerPortBotMinusImageView"
+        android:layout_toRightOf="@id/powerPortBotMinusImageView"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:background="#00000000"
+        android:ems="1"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/backWhite"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <!-- Bot Plus image -->
+    <ImageView
+        android:id="@+id/powerPortBotPlusImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/powerPortCountBotTextView"
+        android:layout_marginStart="8dp"
+        android:layout_alignTop="@id/powerPortBotMinusImageView"
+        android:contentDescription="powerPortBotPlusImageView"
+        android:onClick="onElementClicked"
+        android:src="@drawable/power_cell_plus" />
+
+    <!-- Wheel Spin image -->
+    <ImageView
+        android:id="@+id/wheelSpinImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/endOfMatchButton"
+        android:layout_marginTop="200dp"
+        android:contentDescription="wheelSpinImageView"
+        android:onClick="onElementClicked"
+        android:src="@drawable/wheel_spin_red" />
+
+    <!-- Wheel Color image -->
+    <ImageView
+        android:id="@+id/wheelColorImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wheelSpinImageView"
+        android:layout_alignRight="@id/endOfMatchButton"
+        android:layout_marginTop="20dp"
+        android:contentDescription="wheelColorImageView"
+        android:onClick="onElementClicked"
+        android:src="@drawable/wheel_color_red" />
+
+</RelativeLayout>

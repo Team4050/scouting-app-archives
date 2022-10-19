@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.biohazard4050.infiniterecharge.MainActivity">
+
+    <!-- Biohazard logo background image -->
+    <ImageView
+        android:id="@+id/logoBiohazardImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/item_vertical_margin_big"
+        android:contentDescription="@string/logo_biohazard"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo_biohazard_640x614" />
+
+    <!-- Infinite Recharge logo background image -->
+    <ImageView
+        android:id="@+id/logoDeepspaceImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/item_vertical_margin_big"
+        android:contentDescription="@string/logo_infiniterecharge"
+        android:src="@drawable/logo_infiniterecharge_640x640" />
+
+    <!-- "Begin Scouting" button -->
+    <Button
+        android:id="@+id/beginScoutingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="onButtonClicked"
+        android:padding="8dp"
+        android:text="@string/begin_scouting"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <!-- "Dump Data File" button -->
+    <Button
+        android:id="@+id/dumpDataFileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="onButtonClicked"
+        android:padding="@dimen/item_horizontal_margin_small"
+        android:text="@string/dump_data_file"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>

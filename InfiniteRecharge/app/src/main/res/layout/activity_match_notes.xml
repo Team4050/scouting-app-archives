@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.biohazard4050.infiniterecharge.MatchNotes">
+
+    <!-- Notes background image -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="960dp"
+        android:layout_height="463dp"
+        android:src="@drawable/background_notes_1200x578"
+        android:contentDescription="backgroundImageView"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <!-- Notes textbox -->
+    <EditText
+        android:id="@+id/matchNotesEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_vertical_margin_big"
+        android:layout_marginEnd="@dimen/item_vertical_margin_big"
+        android:layout_marginTop="48sp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:background="#EFEFEF"
+        android:maxLines="10"
+        android:minLines="6"
+        android:scrollHorizontally="false"
+        android:scrollbars="vertical"
+        android:textSize="24sp" />
+
+    <!-- "Finalize Match" button -->
+    <Button
+        android:id="@+id/finalizeMatchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/matchNotesEditText"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/item_vertical_margin_big"
+        android:onClick="onButtonClicked"
+        android:padding="@dimen/item_horizontal_margin_small"
+        android:text="@string/finalize_match"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>
